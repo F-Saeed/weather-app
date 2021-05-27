@@ -1,5 +1,5 @@
 {
-  "name": "weather-app",
+  "name": "weather-search-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/F-Saeed/weather-app.git"
+    "url": "git+https://github.com/F-Saeed/weather-search-app.git"
   },
   "author": "f-saeed",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/F-Saeed/weather-app/issues"
+    "url": "https://github.com/F-Saeed/weather-search-app/issues"
   },
-  "homepage": "https://github.com/F-Saeed/weather-app",
+  "homepage": "https://github.com/F-Saeed/weather-search-app",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.24.0",
     "@typescript-eslint/parser": "^4.24.0",
