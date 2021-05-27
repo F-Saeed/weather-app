@@ -1,0 +1,198 @@
+@use './components/fonts';
+@use './components/colors';
+@use './components/variables';
+
+html {
+  background: url('../assets/images/night-sky.jpg');
+  background-size: cover;
+}
+
+form {
+  background: colors.$brand;
+  border-radius: variables.$radius;
+  height: 48px;
+  position: relative;
+  right: -75%;
+  top: 35px;
+  width: 18rem;
+
+  input,
+  button {
+    height: 3rem;
+    font-family: montserrat-Regular;
+    border: 0;
+    color: colors.$dark;
+    font-size: 1.08rem;
+  }
+
+  input[type='search'] {
+    outline: 0;
+    width: 100%;
+    background: colors.$light;
+    padding: 0 0.96rem;
+    border-radius: variables.$radius;
+    appearance: none;
+    transition: all 0.3s variables.$transition-time;
+    transition-property: width, border-radius;
+    z-index: 1;
+    position: relative;
+  }
+
+  button {
+    cursor: pointer;
+    display: none; // prevent being able to tab to it
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.6rem;
+    font-weight: bold;
+    background: colors.$brand;
+    border-radius: 0 variables.$radius variables.$radius 0;
+  }
+
+  input:not(:placeholder-shown) {
+    border-radius: variables.$radius 0 0 variables.$radius;
+    width: calc(100% - 3.6rem);
+    + button {
+      display: block;
+    }
+  }
+
+  label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+}
+
+main {
+  display: grid;
+  font-family: montserrat-Regular;
+  place-items: center;
+  min-height: 100vh;
+  width: 100%;
+
+  #card {
+    border-radius: 0.7rem;
+    box-shadow: 5px 3px 30px black;
+    color: colors.$light;
+    display: grid;
+    column-gap: 5px;
+    place-items: center;
+    width: 550px;
+    min-height: 300px;
+    text-align: center;
+
+    #general {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      height: 147.2px;
+      width: 100%;
+
+      #temp {
+        padding-right: 20px;
+
+        h1 {
+          max-width: 110px;
+        }
+      }
+
+      #sky-condition {
+        border-left: 2px solid colors.$light;
+        padding-left: 20px;
+      }
+
+      .general-item {
+        h1 {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          font-family: balsamiqSans-Regular;
+          font-size: 4em;
+          max-width: 198px;
+
+          span#toggle {
+            align-self: start;
+            cursor: pointer;
+            font-family: montserrat-Bold;
+            font-size: 0.4em;
+            width: 40px;
+          }
+        }
+
+        h1,
+        p#location {
+          margin: 0;
+        }
+      }
+    }
+
+    #details {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 70px;
+      width: 100%;
+
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h2,
+      p {
+        padding-bottom: 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  form {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  main {
+    #card {
+      width: 300px;
+
+      #general {
+        margin-top: 5px;
+
+        #temp > h1 {
+          font-size: 3.5em;
+        }
+
+        #sky-condition > h1 {
+          font-size: 2.5em;
+          width: 123px;
+        }
+      }
+
+      #details {
+        flex-direction: column;
+
+        h2 {
+          padding-bottom: 5px;
+        }
+
+        p {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  form {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
