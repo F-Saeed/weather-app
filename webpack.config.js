@@ -5,7 +5,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   devtool: 'eval-source-map',
   mode: 'development',
   optimization: {
@@ -13,6 +13,17 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-transform-runtime'],
+          },
+        },
+      },
       {
         test: /\.ts$/,
         use: 'ts-loader',
@@ -78,6 +89,6 @@ module.exports = {
         ],
       },
     }),
-    new BundleAnalyzerPlugin(),
+    /* new BundleAnalyzerPlugin(), */
   ],
 };

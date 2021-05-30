@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/F-Saeed/weather-search-app",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "babel-loader": "^8.2.2",
     "css-loader": "^5.2.4",
     "eslint": "^7.26.0",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -42,6 +44,7 @@
     "webpack-cli": "^4.6.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.14.0",
     "@types/lodash": "^4.14.169",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1"
