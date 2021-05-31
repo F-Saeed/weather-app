@@ -1,10 +1,10 @@
 import { createCard } from './functions';
 
-const addWeather = (searchForm) => (event) => {
-  event.preventDefault();
-  createCard();
+const addWeather = (event) => {
+  const searchValue = document.querySelector('#search').value;
 
-  searchForm.reset();
+  event.preventDefault();
+  createCard(searchValue);
 };
 
-export { addWeather };
+export { addWeather, createCard };

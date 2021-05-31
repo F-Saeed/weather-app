@@ -73,7 +73,7 @@ main {
   display: grid;
   font-family: montserrat-Regular;
   place-items: center;
-  min-height: 90vh;
+  min-height: 100vh;
   width: 100%;
 
   .card {
@@ -83,7 +83,7 @@ main {
     display: grid;
     column-gap: 5px;
     place-items: center;
-    min-width: 550px;
+    width: 550px;
     min-height: 300px;
     text-align: center;
 
@@ -111,7 +111,7 @@ main {
 
       #sky-condition > h1 {
         font-family: montserrat-Regular;
-        font-size: 3.5em;
+        font-size: 2.5em;
       }
 
       .general-item {
@@ -125,14 +125,9 @@ main {
           span.toggle {
             border-radius: 50%;
             align-self: start;
-            cursor: pointer;
             font-family: montserrat-Bold;
             font-size: 0.4em;
             width: 32px;
-
-            &:hover {
-              color: rgba(153, 197, 216, 1);
-            }
           }
         }
 
@@ -167,6 +162,10 @@ main {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  html {
+    height: 100vh;
+  }
+
   form {
     left: 50%;
     transform: translateX(-50%);
@@ -180,11 +179,12 @@ main {
         margin-top: 5px;
 
         #temp > h1 {
-          font-size: 3.5em;
+          font-size: 2.5em;
         }
 
         #sky-condition > h1 {
-          font-size: 2.5em;
+          font-size: 1.1em;
+          height: auto;
           width: 123px;
         }
       }
