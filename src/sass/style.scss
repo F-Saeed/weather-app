@@ -161,7 +161,7 @@ main {
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 570px) {
   html {
     height: 100vh;
   }
@@ -204,7 +204,7 @@ main {
   }
 }
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (min-device-width: 571px) and (max-device-width: 1024px) {
   form {
     left: 50%;
     transform: translateX(-50%);
