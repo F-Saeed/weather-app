@@ -1,5 +1,5 @@
 {
-  "name": "weather-search-app",
+  "name": "weather-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/F-Saeed/weather-search-app.git"
+    "url": "git+https://github.com/F-Saeed/weather-app.git"
   },
   "author": "f-saeed",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/F-Saeed/weather-search-app/issues"
-  },
-  "homepage": "https://github.com/F-Saeed/weather-search-app",
+  "bugs": {},
+  "homepage": "https://github.com/F-Saeed/weather-app",
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/plugin-transform-runtime": "^7.14.3",
