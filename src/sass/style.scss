@@ -162,16 +162,14 @@ main {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 570px) {
-  html {
-    height: 100vh;
-  }
-
   form {
     left: 50%;
     transform: translateX(-50%);
   }
 
   main {
+    height: 100vh;
+
     .card {
       width: 300px;
 
@@ -208,5 +206,9 @@ main {
   form {
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  main {
+    height: 100vh;
   }
 }
