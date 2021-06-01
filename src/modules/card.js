@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 /* from stackoverflow */
 const titleCase = (str) => {
-  let splitStr = str.toLowerCase().split(' ');
+  const splitStr = str.toLowerCase().split(' ');
   for (let i = 0; i < splitStr.length; i += 1) {
     // You do not need to check if i is larger than splitStr length, as your for does that for you
     // Assign it back to the array
@@ -11,7 +12,8 @@ const titleCase = (str) => {
   return splitStr.join(' ');
 };
 
-const createElements = () => {
+/* Select Elements from the weather card */
+const selectElements = () => {
   const temperature = document.querySelector('#temp > h1');
   const currentUnit = document.querySelector('.toggle');
   const location = document.querySelector('#location');
@@ -31,6 +33,7 @@ const createElements = () => {
   };
 };
 
+/* Update weather card elements */
 const appendElements = (
   {
     temperature,
@@ -45,25 +48,23 @@ const appendElements = (
 ) => {
   temperature.innerHTML = `${parseInt(
     data.main.temp
-  )} <span class="toggle" id="metric">${currentUnit.innerText}</span>`;
+  , 10)} <span class="toggle" id="metric">${currentUnit.innerText}</span>`;
 
   location.innerHTML = `${data.name}, ${data.sys.country}`;
 
   skyCondition.innerHTML = titleCase(data.weather[0].description);
 
-  feelsTemp.innerHTML = `${parseInt(data.main.feels_like)}°`;
+  feelsTemp.innerHTML = `${parseInt(data.main.feels_like, 10)}°`;
 
-  windSpeed.innerHTML = `${parseFloat(data.wind.speed)} mph`;
+  windSpeed.innerHTML = `${data.wind.speed} mph`;
 
-  humidityPercentage.innerHTML = `${parseInt(data.main.humidity)}%`;
+  humidityPercentage.innerHTML = `${parseInt(data.main.humidity, 10)}%`;
 };
 
 const setValues = (data) => {
   if (data.cod !== 200) throw new Error(data.message);
 
-  document.querySelector('.card').classList.remove('hidden');
-
-  const currentValues = createElements();
+  const currentValues = selectElements();
   appendElements(currentValues, data);
 };
 

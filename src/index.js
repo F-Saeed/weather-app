@@ -1,8 +1,11 @@
 import 'normalize.css';
 import './sass/style.scss';
-import { addWeather, createCard } from './modules/dom';
+import addWeather from './modules/dom';
+import updateCard from './modules/functions'
 
-createCard('Moscow');
+/* default weather card for moscow */
+updateCard('Moscow');
+
 const searchForm = document.querySelector('form');
 
 searchForm.addEventListener('submit', addWeather);

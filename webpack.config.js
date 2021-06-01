@@ -1,20 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.js',
   devtool: 'eval-source-map',
-  mode: 'development',
+  mode: 'production',
   optimization: {
     usedExports: true,
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.js?$/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -73,8 +71,8 @@ module.exports = {
         // Lossless optimization with custom option
         // Feel free to experiment with options for better result for you
         plugins: [
-          ['gifsicle', { interlaced: true }],
-          ['mozjpeg', { progressive: true }],
+          ['gifsicle', { interlaced: false }],
+          ['mozjpeg', { progressive: true}],
           ['pngquant', { speed: 10 }],
           [
             'svgo',
@@ -89,6 +87,5 @@ module.exports = {
         ],
       },
     }),
-    /* new BundleAnalyzerPlugin(), */
   ],
 };

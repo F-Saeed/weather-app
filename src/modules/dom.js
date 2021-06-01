@@ -1,10 +1,11 @@
-import { createCard } from './functions';
+import updateCard from './functions';
 
+/* Add weather data to card */
 const addWeather = (event) => {
+  event.preventDefault();
   const searchValue = document.querySelector('#search').value;
 
-  event.preventDefault();
-  createCard(searchValue);
+  updateCard(searchValue);
 };
 
-export { addWeather, createCard };
+export default addWeather;
