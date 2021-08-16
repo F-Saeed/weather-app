@@ -47,8 +47,9 @@ const appendElements = (
   data
 ) => {
   temperature.innerHTML = `${parseInt(
-    data.main.temp
-  , 10)} <span class="toggle" id="metric">${currentUnit.innerText}</span>`;
+    data.main.temp,
+    10
+  )} <span class="toggle" id="metric">${currentUnit.innerText}</span>`;
 
   location.innerHTML = `${data.name}, ${data.sys.country}`;
 

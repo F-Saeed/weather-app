@@ -112,7 +112,7 @@ main {
 
       #sky-condition > h1 {
         font-family: montserrat-Regular;
-        font-size: 3em;
+        font-size: 2.45rem;
       }
 
       .general-item {
@@ -120,7 +120,7 @@ main {
           display: grid;
           grid-template-columns: 1fr 1fr;
           font-family: balsamiqSans-Regular;
-          font-size: 4em;
+          font-size: 4rem;
           max-width: 198px;
 
           span.toggle {
@@ -164,36 +164,33 @@ main {
     transform: translateX(-50%);
   }
 
-  main {
-    height: 100vh;
+  .card {
+    box-shadow: none;
+    width: 350px;
 
-    .card {
-      width: 300px;
+    #general {
+      margin-top: 5px;
 
-      #general {
-        margin-top: 5px;
-
-        #temp > h1 {
-          font-size: 2.5em;
-        }
-
-        #sky-condition > h1 {
-          font-size: 1.1em;
-          height: auto;
-          width: 123px;
-        }
+      #temp > h1 {
+        font-size: 2.5em;
       }
 
-      #details {
-        flex-direction: column;
+      #sky-condition > h1 {
+        font-size: 1.4rem;
+        height: auto;
+        width: 120px;
+      }
+    }
 
-        h2 {
-          padding-bottom: 5px;
-        }
+    #details {
+      flex-direction: column;
 
-        p {
-          padding-bottom: 20px;
-        }
+      h2 {
+        padding-bottom: 5px;
+      }
+
+      p {
+        padding-bottom: 20px;
       }
     }
   }
@@ -203,9 +200,5 @@ main {
   form {
     left: 50%;
     transform: translateX(-50%);
-  }
-
-  main {
-    height: 100vh;
   }
 }

@@ -1,4 +1,4 @@
-import setValues from './card';
+import setValues from './card.js';
 
 /* Fetch weather data from openweather API */
 async function getWeather(searchValue, unit) {
