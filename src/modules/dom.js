@@ -8,4 +8,10 @@ const addWeather = (event) => {
   updateCard(searchValue);
 };
 
-export default addWeather;
+const resizeCheck = () => {
+  const skyCondition = document.querySelector('#sky-condition > h1');
+  const skyConditionFirstWordLength = skyCondition.innerText;
+  console.log(skyConditionFirstWordLength);
+};
+
+export { addWeather, resizeCheck };
