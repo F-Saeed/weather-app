@@ -12,10 +12,12 @@ async function getWeather(searchValue, unit) {
 }
 
 /* Update weather card using the new fetched data */
-const updateCard = (searchValue) => {
+const updateCard = async (searchValue) => {
   const scale = document.querySelector('.toggle').id;
 
-  getWeather(searchValue, scale).then((data) => setValues(data));
+  const data = await getWeather(searchValue, scale)
+  setValues(data);
+  return;
 };
 
 export default updateCard;
