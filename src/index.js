@@ -4,10 +4,8 @@ import { addWeather, resizeCheck } from './modules/dom';
 import updateCard from './modules/functions';
 
 /* default weather card for moscow */
-updateCard('Moscow');
-
-const searchForm = document.querySelector('form');
-
-searchForm.addEventListener('submit', addWeather);
-
-resizeCheck();
+updateCard('Moscow').then(() => {
+  const searchForm = document.querySelector('form');
+  searchForm.addEventListener('submit', addWeather);
+  resizeCheck();
+});

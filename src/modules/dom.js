@@ -10,8 +10,16 @@ const addWeather = (event) => {
 
 const resizeCheck = () => {
   const skyCondition = document.querySelector('#sky-condition > h1');
-  const skyConditionFirstWordLength = skyCondition.innerText;
-  console.log(skyConditionFirstWordLength);
+  const skyConditionFirstWordLength = skyCondition.innerText.split(' ')[0]
+    .length;
+
+  if (skyConditionFirstWordLength < 8 && screen.width > 570)
+    skyCondition.style.fontSize = '3.5rem';
+  else if (skyConditionFirstWordLength > 8 && screen.width > 570)
+    skyCondition.style.fontSize = '2.4rem';
+  else if (skyConditionFirstWordLength <= 8 && screen.width < 570)
+    skyCondition.style.fontSize = '2rem';
+  else skyCondition.style.fontSize = '1.4rem';
 };
 
 export { addWeather, resizeCheck };

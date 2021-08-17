@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 /* from stackoverflow */
 const titleCase = (str) => {
   const splitStr = str.toLowerCase().split(' ');
@@ -53,8 +52,7 @@ const appendElements = (
 
   location.innerHTML = `${data.name}, ${data.sys.country}`;
 
-  skyCondition.innerHTML = 'Thunderstorm';
-  // titleCase(data.weather[0].description);
+  skyCondition.innerHTML = titleCase(data.weather[0].description);
 
   feelsTemp.innerHTML = `${parseInt(data.main.feels_like, 10)}°`;
 
