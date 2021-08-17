@@ -1,5 +1,5 @@
 import 'normalize.css';
-import './sass/style.scss';
+// import './sass/style.scss';
 import { addWeather, resizeCheck } from './modules/dom';
 import updateCard from './modules/functions';
 
